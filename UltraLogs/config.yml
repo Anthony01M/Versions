@@ -1,0 +1,91 @@
+################################################################################################
+#                                                                                              #
+#    ___  ___  ___   _________  ________  ________  ___       ________  ________  ________     #
+#   |\  \|\  \|\  \ |\___   ___\\   __  \|\   __  \|\  \     |\   __  \|\   ____\|\   ____\    #
+#     \ \  \\\  \ \  \\|___ \  \_\ \  \|\  \ \  \|\  \ \  \    \ \  \|\  \ \  \___|\ \  \___|_ #
+#     \ \  \\\  \ \  \    \ \  \ \ \   _  _\ \   __  \ \  \    \ \  \\\  \ \  \  __\ \_____  \ #
+#     \ \  \\\  \ \  \____\ \  \ \ \  \\  \\ \  \ \  \ \  \____\ \  \\\  \ \  \|\  \|____|\  \ #
+#     \ \_______\ \_______\ \__\ \ \__\\ _\\ \__\ \__\ \_______\ \_______\ \_______\____\_\  \ #
+#     \|_______|\|_______|\|__|  \|__|\|__|\|__|\|__|\|_______|\|_______|\|_______|\_________\ #
+#     \|_________|                                                                             #
+#                                                                                              #
+################################################################################################
+#        Do you want a cheap MC Server or a VPS for extremely cheap with great support?        #
+#                           Check out https://versatilenode.com/ now                           #
+################################################################################################
+
+# UltraLogs prefix
+prefix: '&2Logs »'
+
+# Would you like to alarm you if there's an update?
+update:
+  enabled: true
+
+# What are UltraLog's aliases
+commands:
+  # Main Sub Command, if set as empty ultralogs will not work
+  # /<commands_main*> <subcommand> <args>
+  # * the one you're currently changing
+  main: 'ultralogs'
+  # Sub Command Aliases
+  # /<commands_alias*> <subcommand> <args>
+  # * the one you're currently changing
+  alias: 'cl', 'ul', 'logs','log', 'ulogs', 'ulog'
+
+# What would you like to log?
+log:
+  # Would you like to log commands
+  commands: true
+  # Would you like to log player join
+  playerjoin: true
+  # Would you like to log player leave
+  playerleave: true
+  # Would you like to log player chat
+  playerchat: true
+  # Would you like logs to be sent on console?
+  console: false
+
+# https://paste.ee/ enable if you wish to have --pastee enabled
+pastee:
+  enable: false
+  key: 'API_KEY'
+
+# https://pastebin.com enable if you wish to have --pastebin enabled
+pastebin:
+  enable: false
+  key: 'API_KEY'
+
+# MySQL method: logging.
+MySQL:
+  enabled: false
+  host: 'localhost'
+  database: 'MYSQL_DATABASE_ULTRALOGS'
+  username: 'MYSQL_USERNAME_ULTRALOGS'
+  password: 'MYSQL_PASSWORD_ULTRALOGS'
+  port: '3306'
+
+# Text File method: logging.
+textfile:
+  enabled: true
+
+# Not the best choice, however, it's a reload system.
+# Usage at your own risk, avoid using it cause I don't fully support it.
+# Be aware, I do not give support in case you decided to enable it.
+# NOTICE: This may not work on Pterodactyl Panel or MultiCraft Panel as far as I've tested.
+AutoReload:
+  # Would you like to reload the config.yml file?
+  config: false
+  # Would you like to reload the language.yml file?
+  language: false
+
+# Validation
+Validation:
+  # Validation key
+  # If you did not get one, please join my discord.
+  # Discord: https://discord.gg/JgPqJqk
+  # I will be giving you the steps to get one.
+  key: ''
+  # Validation debug
+  # Keep False if you do not want to get spammed
+  # Enable when asked by Anthony M. only.
+  debug: false
