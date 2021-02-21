@@ -1,0 +1,43 @@
+################################################################################################
+#                                                                                              #
+#    ___  ___  ___   _________  ________  ________  ___       ________  ________  ________     #
+#   |\  \|\  \|\  \ |\___   ___\\   __  \|\   __  \|\  \     |\   __  \|\   ____\|\   ____\    #
+#     \ \  \\\  \ \  \\|___ \  \_\ \  \|\  \ \  \|\  \ \  \    \ \  \|\  \ \  \___|\ \  \___|_ #
+#     \ \  \\\  \ \  \    \ \  \ \ \   _  _\ \   __  \ \  \    \ \  \\\  \ \  \  __\ \_____  \ #
+#     \ \  \\\  \ \  \____\ \  \ \ \  \\  \\ \  \ \  \ \  \____\ \  \\\  \ \  \|\  \|____|\  \ #
+#     \ \_______\ \_______\ \__\ \ \__\\ _\\ \__\ \__\ \_______\ \_______\ \_______\____\_\  \ #
+#     \|_______|\|_______|\|__|  \|__|\|__|\|__|\|__|\|_______|\|_______|\|_______|\_________\ #
+#     \|_________|                                                                             #
+#                                                                                              #
+################################################################################################
+#        Do you want a cheap MC Server or a VPS for extremely cheap with great support?        #
+#                           Check out https://versatilenode.com/ now                           #
+################################################################################################
+
+update:
+  # Notify you when there's a new update for UL
+  notify: '{prefix} &fThere''s a new update for UltraLogs'
+
+command:
+  # Unknown Command Message
+  unknown: '{prefix} &fUnknown command.'
+  # No Permission Message
+  no_permission: '{prefix} &fNo Permission'
+  # Player only Message
+  only_player: '{prefix} &fYou may not use such command in console.'
+  # On Reload Message
+  reload: '{prefix} &fUltraLogs have been reloaded.'
+  # Console Command Notification
+  notify_sent: '{prefix} &f{player} executed {command}.'
+
+logs:
+  mysql:
+    successful: '{prefix} &fSuccessfully logged all enabled log events into MySQL'
+    fail: '{prefix} &fFailed logging into MySQL!'
+  textfile:
+    successful: '{prefix} &fSuccessfully logged all enabled log events into TextFiles'
+    fail: '{prefix} &fFailed logging into text file!'
+
+AutoReload:
+  config: '{prefix} &f[Auto-Reload] Reloaded: config.yml'
+  language: '{prefix} &f[Auto-Reload] Reloaded: language.yml'
