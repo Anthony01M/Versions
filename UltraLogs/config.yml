@@ -14,6 +14,18 @@
 #                           Check out https://versatilenode.com/ now                           #
 ################################################################################################
 
+# Your Server Name, preferred game mode name, e.g: lobby, survival, etc.
+# Do not use Color Chat, they do not work as it's stored in the database for you to know.
+# This allowed bungee cord integration, everything is worked as you're running a network from when
+# the plugin was originally coded.
+#
+# 1) Will work if join/leave event are enabled..
+# This will show in the join/leave event, e.g: Anthony has joined MyServer // Anthony has left MyServer.
+#
+# 2) Will work when chat/commands logs are enabled..
+# This will show in the chat/commands logs, e.g: Anthony has processed: /help // Anthony » hello!
+servername: 'MyServer'
+
 # UltraLogs prefix
 prefix: '&2Logs »'
 
