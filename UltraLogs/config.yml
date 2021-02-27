@@ -23,7 +23,7 @@
 # This will show in the join/leave event, e.g: Anthony has joined MyServer // Anthony has left MyServer.
 #
 # 2) Will work when chat/commands logs are enabled..
-# This will show in the chat/commands logs, e.g: Anthony has processed: /help // Anthony » hello!
+# This will show in the chat/commands logs, e.g: [MyServer] [Time] Anthony has processed: /help // [MyServer] [Time] Anthony » hello!
 servername: 'MyServer'
 
 # UltraLogs prefix
