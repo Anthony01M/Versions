@@ -26,7 +26,7 @@
 # This will show in the chat/commands logs, e.g: [MyServer] [Time] Anthony has processed: /help // [MyServer] [Time] Anthony » hello!
 servername: 'MyServer'
 
-# UltraLogs prefix
+# UltraLogsBukkit prefix
 prefix: '&2Logs »'
 
 # Would you like to alarm you if there's an update?
@@ -46,16 +46,25 @@ commands:
 
 # What would you like to log?
 log:
-  # Would you like to log commands
+  # Would you like to log commands?
   commands: true
-  # Would you like to log player join
+  # Would you like to log player join?
   playerjoin: true
-  # Would you like to log player leave
+  # Would you like to log player leave?
   playerleave: true
-  # Would you like to log player chat
+  # Would you like to log player chat?
   playerchat: true
   # Would you like logs to be sent on console?
   console: false
+  # Would you like to have the player IPs censored?
+  #
+  # This will only work when sent to chat, pastebin or pastee.
+  # It will still log the player's IP if the events for it are enabled.
+  #
+  # You are able to bypass this if you have the correct permissions.
+  # Please check our wiki for a full overview of our permission node.
+  # If you do not have permission, it will show: [CENSORED] in logs.
+  censorip: true
 
 # https://paste.ee/ enable if you wish to have --pastee enabled
 pastee:
@@ -68,7 +77,7 @@ pastebin:
   key: 'API_KEY'
 
 # MySQL method: logging.
-MySQL:
+mysq:
   enabled: false
   host: 'localhost'
   database: 'MYSQL_DATABASE_ULTRALOGS'
@@ -80,18 +89,30 @@ MySQL:
 textfile:
   enabled: true
 
+# Once Enabled, DeleteBot automatically starts purging old logs of UltraLogs
+# allowing you to have much more space.
+deletebot:
+  mysql:
+    enabled: true
+    # After how many days should delete bot start pruning old mysql logs.
+    each: 14
+  textfile:
+    enabled: true
+    # After how many days should delete bot start pruning old text file logs.
+    each: 14
+
 # Not the best choice, however, it's a reload system.
 # Usage at your own risk, avoid using it cause I don't fully support it.
 # Be aware, I do not give support in case you decided to enable it.
 # NOTICE: This may not work on Pterodactyl Panel or MultiCraft Panel as far as I've tested.
-AutoReload:
+autoreload:
   # Would you like to reload the config.yml file?
   config: false
   # Would you like to reload the language.yml file?
   language: false
 
 # Validation
-Validation:
+validation:
   # Validation key
   # If you did not get one, please join my discord.
   # Discord: https://discord.gg/JgPqJqk
