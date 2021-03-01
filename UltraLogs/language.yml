@@ -14,10 +14,12 @@
 #                           Check out https://versatilenode.com/ now                           #
 ################################################################################################
 
+# Updates
 update:
   # Notify you when there's a new update for UL
   notify: '{prefix} &fThere''s a new update for UltraLogs'
 
+# Commands
 command:
   # Unknown Command Message
   unknown: '{prefix} &fUnknown command.'
@@ -30,6 +32,7 @@ command:
   # Console Command Notification
   notify_sent: '{prefix} &f{player} executed {command}.'
 
+# Logs
 logs:
   mysql:
     successful: '{prefix} &fSuccessfully logged all enabled log events into MySQL'
@@ -38,6 +41,90 @@ logs:
     successful: '{prefix} &fSuccessfully logged all enabled log events into TextFiles'
     fail: '{prefix} &fFailed logging into text file!'
 
-AutoReload:
+# Auto-Reload
+autoreload:
   config: '{prefix} &f[Auto-Reload] Reloaded: config.yml'
   language: '{prefix} &f[Auto-Reload] Reloaded: language.yml'
+
+# General
+# PlaceHolders ( per category )
+# Please be aware that, if you put & it will not work due to people might be abusing it in case your
+# moderators check logs using in game, so it's set as: §
+general:
+  logs:
+    #   TIME:
+    #       {yyyy} = YEAR
+    #       {MM} = MONTH
+    #       {dd} = DAY
+    #       {hh} = HOUR
+    #       {mm} = MINUTE
+    #       {ss} = SECOND
+    time: '{dd}.{MM} {hh}:{mm}:{ss}'
+    format:
+      #   Chat:
+      #       {yyyy} = YEAR
+      #       {MM} = MONTH
+      #       {dd} = DAY
+      #       {hh} = HOUR
+      #       {mm} = MINUTE
+      #       {ss} = SECOND
+      #       {time} = TIME
+      #       {servername} = CONFIG'S SERVERNAME
+      #       {name} = PLAYER NAME
+      #       {uuid} = PLAYER UUID
+      #       {message} = MESSAGE
+      #       {IP_player} = PLAYER IP
+      chat: '[{servername}] [{time}] §esaid: {message}'
+      #   Command:
+      #       {yyyy} = YEAR
+      #       {MM} = MONTH
+      #       {dd} = DAY
+      #       {hh} = HOUR
+      #       {mm} = MINUTE
+      #       {ss} = SECOND
+      #       {time} = TIME
+      #       {servername} = CONFIG'S SERVERNAME
+      #       {name} = PLAYER NAME
+      #       {uuid} = PLAYER UUID
+      #       {command} = COMMAND EXECUTED
+      #       {IP_player} = PLAYER IP
+      command: '[{servername}] [{time}] §eproceed command: {command}'
+      #   Join:
+      #       {yyyy} = YEAR
+      #       {MM} = MONTH
+      #       {dd} = DAY
+      #       {hh} = HOUR
+      #       {mm} = MINUTE
+      #       {ss} = SECOND
+      #       {time} = TIME
+      #       {servername} = CONFIG'S SERVERNAME
+      #       {name} = PLAYER NAME
+      #       {uuid} = PLAYER UUID
+      #       {IP_player} = PLAYER IP
+      #       {IP_server} = THE IP THAT HE JOINED WITH, e.g: play.example.com
+      join: '[{servername}] [{time}] §ejoined {servername} (IP: {IP_player}, Server Join IP: {IP_server})'
+      #   Leave:
+      #       {yyyy} = YEAR
+      #       {MM} = MONTH
+      #       {dd} = DAY
+      #       {hh} = HOUR
+      #       {mm} = MINUTE
+      #       {ss} = SECOND
+      #       {time} = TIME
+      #       {servername} = CONFIG'S SERVERNAME
+      #       {name} = PLAYER NAME
+      #       {uuid} = PLAYER UUID
+      leave: '[{servername}] [{time}] §equit from server {servername}'
+      #   Kick:
+      #       {yyyy} = YEAR
+      #       {MM} = MONTH
+      #       {dd} = DAY
+      #       {hh} = HOUR
+      #       {mm} = MINUTE
+      #       {ss} = SECOND
+      #       {time} = TIME
+      #       {servername} = CONFIG'S SERVERNAME
+      #       {name} = PLAYER NAME
+      #       {uuid} = PLAYER UUID
+      #       {kick_reason} = PLAYER KICK REASON
+      kick: '[{servername}] [{time}] §ekicked: {kick_reason}'
