@@ -62,12 +62,6 @@ general:
     time: '{dd}.{MM} {hh}:{mm}:{ss}'
     format:
       #   Chat:
-      #       {yyyy} = YEAR
-      #       {MM} = MONTH
-      #       {dd} = DAY
-      #       {hh} = HOUR
-      #       {mm} = MINUTE
-      #       {ss} = SECOND
       #       {time} = TIME
       #       {servername} = CONFIG'S SERVERNAME
       #       {name} = PLAYER NAME
@@ -76,12 +70,6 @@ general:
       #       {IP_player} = PLAYER IP
       chat: '[{servername}] [{time}] §esaid: {message}'
       #   Command:
-      #       {yyyy} = YEAR
-      #       {MM} = MONTH
-      #       {dd} = DAY
-      #       {hh} = HOUR
-      #       {mm} = MINUTE
-      #       {ss} = SECOND
       #       {time} = TIME
       #       {servername} = CONFIG'S SERVERNAME
       #       {name} = PLAYER NAME
@@ -90,12 +78,6 @@ general:
       #       {IP_player} = PLAYER IP
       command: '[{servername}] [{time}] §eproceed command: {command}'
       #   Join:
-      #       {yyyy} = YEAR
-      #       {MM} = MONTH
-      #       {dd} = DAY
-      #       {hh} = HOUR
-      #       {mm} = MINUTE
-      #       {ss} = SECOND
       #       {time} = TIME
       #       {servername} = CONFIG'S SERVERNAME
       #       {name} = PLAYER NAME
@@ -104,24 +86,12 @@ general:
       #       {IP_server} = THE IP THAT HE JOINED WITH, e.g: play.example.com
       join: '[{servername}] [{time}] §ejoined {servername} (IP: {IP_player}, Server Join IP: {IP_server})'
       #   Leave:
-      #       {yyyy} = YEAR
-      #       {MM} = MONTH
-      #       {dd} = DAY
-      #       {hh} = HOUR
-      #       {mm} = MINUTE
-      #       {ss} = SECOND
       #       {time} = TIME
       #       {servername} = CONFIG'S SERVERNAME
       #       {name} = PLAYER NAME
       #       {uuid} = PLAYER UUID
       leave: '[{servername}] [{time}] §equit from server {servername}'
       #   Kick:
-      #       {yyyy} = YEAR
-      #       {MM} = MONTH
-      #       {dd} = DAY
-      #       {hh} = HOUR
-      #       {mm} = MINUTE
-      #       {ss} = SECOND
       #       {time} = TIME
       #       {servername} = CONFIG'S SERVERNAME
       #       {name} = PLAYER NAME
