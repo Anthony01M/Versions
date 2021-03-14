@@ -23,10 +23,12 @@
 # This will show in the join/leave event, e.g: Anthony has joined MyServer // Anthony has left MyServer.
 #
 # 2) Will work when chat/commands logs are enabled..
-# This will show in the chat/commands logs, e.g: [MyServer] [Time] Anthony has processed: /help // [MyServer] [Time] Anthony » hello!
-servername: 'MyServer'
+# This will show in the chat/commands logs, e.g: [myserver] [Time] Anthony has processed: /help // [myserver] [Time] Anthony » hello!
+#
+# Please be aware that if you change this, make it all lower case ( without caps ).
+servername: 'myserver'
 
-# UltraLogsBukkit prefix
+# UltraLogs prefix
 prefix: '&2Logs »'
 
 # Would you like to alarm you if there's an update?
@@ -78,16 +80,11 @@ pastebin:
 
 # MySQL method: logging.
 mysq:
-  enabled: false
   host: 'localhost'
   database: 'MYSQL_DATABASE_ULTRALOGS'
   username: 'MYSQL_USERNAME_ULTRALOGS'
   password: 'MYSQL_PASSWORD_ULTRALOGS'
   port: '3306'
-
-# Text File method: logging.
-textfile:
-  enabled: true
 
 # Once Enabled, DeleteBot automatically starts purging old logs of UltraLogs
 # allowing you to have much more space.
@@ -96,14 +93,10 @@ deletebot:
     enabled: true
     # After how many days should delete bot start pruning old mysql logs.
     each: 14
-  textfile:
-    enabled: true
-    # After how many days should delete bot start pruning old text file logs.
-    each: 14
 
 # Not the best choice, however, it's a reload system.
 # Usage at your own risk, avoid using it cause I don't fully support it.
-# Be aware, I do not give support in case you decided to enable it.
+# Be aware, I do not give support in case you decided to enable it and may not receive updates.
 # NOTICE: This may not work on Pterodactyl Panel or MultiCraft Panel as far as I've tested.
 autoreload:
   # Would you like to reload the config.yml file?
