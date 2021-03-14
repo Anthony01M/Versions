@@ -37,9 +37,6 @@ logs:
   mysql:
     successful: '{prefix} &fSuccessfully logged all enabled log events into MySQL'
     fail: '{prefix} &fFailed logging into MySQL!'
-  textfile:
-    successful: '{prefix} &fSuccessfully logged all enabled log events into TextFiles'
-    fail: '{prefix} &fFailed logging into text file!'
 
 # Auto-Reload
 autoreload:
