@@ -17,31 +17,19 @@
 # Updates
 update:
   # Notify you when there's a new update for UL
-  notify: '{prefix} &fThere''s a new update for UltraLogs'
+  # {prefix} = PREFIX
+  # {cversion} = CURRENT VERSION
+  # {nversion} = NEW VERSION
+  notify: '{prefix} &fThere''s a new update for UltraLogs! Current Version: {cversion}! New Version: {nversion}'
 
 # Commands
 command:
-  # Unknown Command Message
-  unknown: '{prefix} &fUnknown command.'
   # No Permission Message
   no_permission: '{prefix} &fNo Permission'
   # Player only Message
   only_player: '{prefix} &fYou may not use such command in console.'
   # On Reload Message
   reload: '{prefix} &fUltraLogs have been reloaded.'
-  # Console Command Notification
-  notify_sent: '{prefix} &f{player} executed {command}.'
-
-# Logs
-logs:
-  mysql:
-    successful: '{prefix} &fSuccessfully logged all enabled log events into MySQL'
-    fail: '{prefix} &fFailed logging into MySQL!'
-
-# Auto-Reload
-autoreload:
-  config: '{prefix} &f[Auto-Reload] Reloaded: config.yml'
-  language: '{prefix} &f[Auto-Reload] Reloaded: language.yml'
 
 # General
 # PlaceHolders ( per category )
@@ -50,13 +38,13 @@ autoreload:
 general:
   logs:
     #   TIME:
-    #       {yyyy} = YEAR
-    #       {MM} = MONTH
-    #       {dd} = DAY
-    #       {hh} = HOUR
-    #       {mm} = MINUTE
-    #       {ss} = SECOND
-    time: '{dd}.{MM} {hh}:{mm}:{ss}'
+    #       yyyy = YEAR
+    #       MM = MONTH
+    #       dd = DAY
+    #       HH = HOUR
+    #       mm = MINUTE
+    #       ss = SECOND
+    time: 'dd.MM HH:mm:ss'
     format:
       #   Chat:
       #       {time} = TIME
@@ -64,7 +52,6 @@ general:
       #       {name} = PLAYER NAME
       #       {uuid} = PLAYER UUID
       #       {message} = MESSAGE
-      #       {IP_player} = PLAYER IP
       chat: '[{servername}] [{time}] §esaid: {message}'
       #   Command:
       #       {time} = TIME
@@ -72,7 +59,6 @@ general:
       #       {name} = PLAYER NAME
       #       {uuid} = PLAYER UUID
       #       {command} = COMMAND EXECUTED
-      #       {IP_player} = PLAYER IP
       command: '[{servername}] [{time}] §eproceed command: {command}'
       #   Join:
       #       {time} = TIME
@@ -80,8 +66,7 @@ general:
       #       {name} = PLAYER NAME
       #       {uuid} = PLAYER UUID
       #       {IP_player} = PLAYER IP
-      #       {IP_server} = THE IP THAT HE JOINED WITH, e.g: play.example.com
-      join: '[{servername}] [{time}] §ejoined {servername} (IP: {IP_player}, Server Join IP: {IP_server})'
+      join: '[{servername}] [{time}] §ejoined {servername} (IP: {IP_player})'
       #   Leave:
       #       {time} = TIME
       #       {servername} = CONFIG'S SERVERNAME
@@ -95,3 +80,17 @@ general:
       #       {uuid} = PLAYER UUID
       #       {kick_reason} = PLAYER KICK REASON
       kick: '[{servername}] [{time}] §ekicked: {kick_reason}'
+      #   Death:
+      #       {time} = TIME
+      #       {servername} = CONFIG'S SERVERNAME
+      #       {name} = PLAYER NAME
+      #       {uuid} = PLAYER UUID
+      #       {killer} = HOW THE PLAYER DIED
+      death: '[{servername}] [{time}] §edied, killer: {killer}'
+      #   Kill:
+      #       {time} = TIME
+      #       {servername} = CONFIG'S SERVERNAME
+      #       {name} = PLAYER NAME
+      #       {uuid} = PLAYER UUID
+      #       {killed} = HOW THE PLAYER DIED
+      kill: '[{servername}] [{time}] §ekilled: {killed}'
