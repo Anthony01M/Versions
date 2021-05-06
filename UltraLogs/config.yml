@@ -25,26 +25,26 @@
 # 2) Will work when chat/commands logs are enabled..
 # This will show in the chat/commands logs, e.g: [myserver] [Time] Anthony has processed: /help // [myserver] [Time] Anthony » hello!
 #
-# Please be aware that if you change this, make it all lower case ( without caps ).
+# Please be aware that if you change this to make it all lower case ( without caps ) and unique, e.g: sws-01 (skywars solo 01), sws-02 (skywars solo 02).
+# Do not make the servername equals to another one, it will, not only potentially store it into your db and when logging a player name show
+# the two servers at the same time but also could lead to multiple issues that I will not be taken responsible of.
 servername: 'myserver'
 
 # UltraLogs prefix
 prefix: '&2Logs »'
 
-# Would you like to alarm you if there's an update?
 update:
-  enabled: true
-
-# What are UltraLog's aliases
-commands:
-  # Main Sub Command, if set as empty ultralogs will not work
-  # /<commands_main*> <subcommand> <args>
-  # * the one you're currently changing
-  main: 'ultralogs'
-  # Sub Command Aliases
-  # /<commands_alias*> <subcommand> <args>
-  # * the one you're currently changing
-  alias: 'cl', 'ul', 'logs','log', 'ulogs', 'ulog'
+  # Would you like to alarm you if there's an update?
+  notify: true
+  # Time between deleting logs (async)
+  # 0 will save logs instantly (use more resource - not recommended)
+  # We highly encourage you to keep it as it is now.
+  # Please be aware that this is for deleting logs only (delete bot)
+  data: 500
+  # Debugs on start-up everything that loads and what location
+  # Disabled by default, should stay disabled, I only recommend you to enable
+  # it when I ask you to/
+  debug: false
 
 # What would you like to log?
 log:
@@ -56,62 +56,34 @@ log:
   playerleave: true
   # Would you like to log player chat?
   playerchat: true
-  # Would you like logs to be sent on console?
-  console: false
-  # Would you like to have the player IPs censored?
-  #
-  # This will only work when sent to chat, pastebin or pastee.
-  # It will still log the player's IP if the events for it are enabled.
-  #
-  # You are able to bypass this if you have the correct permissions.
-  # Please check our wiki for a full overview of our permission node.
-  # If you do not have permission, it will show: [CENSORED] in logs.
-  censorip: true
+  # Would you like to log player kill?
+  playerkick: true
+  # Would you like to log player death?
+  playerdeath: true
+  # Would you like to log player kill?
+  playerkill: true
 
 # https://paste.ee/ enable if you wish to have --pastee enabled
 pastee:
   enable: false
   key: 'API_KEY'
 
-# https://pastebin.com enable if you wish to have --pastebin enabled
-pastebin:
-  enable: false
-  key: 'API_KEY'
-
 # MySQL method: logging.
-mysq:
+mysql:
   host: 'localhost'
   database: 'MYSQL_DATABASE_ULTRALOGS'
   username: 'MYSQL_USERNAME_ULTRALOGS'
   password: 'MYSQL_PASSWORD_ULTRALOGS'
-  port: '3306'
+  port: 3306
 
-# Once Enabled, DeleteBot automatically starts purging old logs of UltraLogs
-# allowing you to have much more space.
+# Automatically deletes logs in the database after X days.
+# Please be aware that 90days is the max amount, I don't want you to break
+# your server, this is a must need.
+# It's highly recommended to have it set as 14days if you have 50players online.
+# Please and I actually beg you, don't put a realistic number cause it will just go back to
+# being 14days, if I didn't make it like that, not only will your server break but also have lots of issues
+# I'm not going to be getting the blame on this.
+# PLEASE BE AWARE THAT YOU CANNOT ADD DOTS (e.g: "14.5") THIS WILL ERROR!
+# DELETE BOT IS PER SERVER!!
 deletebot:
-  mysql:
-    enabled: true
-    # After how many days should delete bot start pruning old mysql logs.
     each: 14
-
-# Not the best choice, however, it's a reload system.
-# Usage at your own risk, avoid using it cause I don't fully support it.
-# Be aware, I do not give support in case you decided to enable it and may not receive updates.
-# NOTICE: This may not work on Pterodactyl Panel or MultiCraft Panel as far as I've tested.
-autoreload:
-  # Would you like to reload the config.yml file?
-  config: false
-  # Would you like to reload the language.yml file?
-  language: false
-
-# Validation
-validation:
-  # Validation key
-  # If you did not get one, please join my discord.
-  # Discord: https://discord.gg/JgPqJqk
-  # I will be giving you the steps to get one.
-  key: ''
-  # Validation debug
-  # Keep False if you do not want to get spammed
-  # Enable when told by Anthony M. only.
-  debug: false
