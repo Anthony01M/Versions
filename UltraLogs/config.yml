@@ -14,21 +14,43 @@
 #                           Check out https://versatilenode.com/ now                           #
 ################################################################################################
 
-# Your Server Name, preferred game mode name, e.g: lobby, survival, etc.
-# Do not use Color Chat, they do not work as it's stored in the database for you to know.
-# This allowed bungee cord integration, everything is worked as you're running a network from when
-# the plugin was originally coded.
-#
-# 1) Will work if join/leave event are enabled..
-# This will show in the join/leave event, e.g: Anthony has joined MyServer // Anthony has left MyServer.
-#
-# 2) Will work when chat/commands logs are enabled..
-# This will show in the chat/commands logs, e.g: [myserver] [Time] Anthony has processed: /help // [myserver] [Time] Anthony » hello!
-#
-# Please be aware that if you change this to make it all lower case ( without caps ) and unique, e.g: sws-01 (skywars solo 01), sws-02 (skywars solo 02).
-# Do not make the servername equals to another one, it will, not only potentially store it into your db and when logging a player name show
-# the two servers at the same time but also could lead to multiple issues that I will not be taken responsible of.
-servername: 'myserver'
+server:
+  # Your Server Name, preferred game mode name, e.g: lobby, survival, etc.
+  # Do not use Color Chat, they do not work as it's stored in the database for you to know.
+  # This allowed bungee cord integration, everything is worked as you're running a network from when
+  # the plugin was originally coded.
+  #
+  # 1) Will work if join/leave event are enabled..
+  # This will show in the join/leave event, e.g: Anthony has joined MyServer // Anthony has left MyServer.
+  #
+  # 2) Will work when chat/commands logs are enabled..
+  # This will show in the chat/commands logs, e.g: [myserver] [Time] Anthony has processed: /help // [myserver] [Time] Anthony » hello!
+  #
+  # Please be aware that if you change this to make it all lower case ( without caps ) and unique, e.g: sws-01 (skywars solo 01), sws-02 (skywars solo 02).
+  # Do not make the servername equals to another one, it will, not only potentially store it into your db and when logging a player name show
+  # the two servers at the same time but also could lead to multiple issues that I will not be taken responsible of.
+  name: 'myserver'
+  # Only enable this if you have bungee-cord / proxy
+  # Do not enable it if you do not have a cross-server platform, it's really not recommended
+  # This solves issues regarding bungee-cord cross-server issues, just in case your player left to
+  # a server where the cache almost got added to the database so it doesn't actually show you for example
+  # survival logs before the lobby logs.
+  proxy: false
+  # Between these 2 ( 4 possibilities ) options, please select your server's actual mode
+  # premium / online - means your server is only for paid minecraft accounts ( recommended )
+  # cracked / offline - means your server is at risk and accepts non paid minecraft accounts ( not recommended )
+  # Please be aware that we do not officially provide support for offline mode.
+  # Please avoid using offline mode at all times, it's not safe.
+  # We'd like to confirm that this system is based on what you put, don't complain to us if you use
+  # offline mode and put it as premium and suddenly errors occur.
+  # This is made as a better system, instead of using the same method Essentials use and make it not that
+  # well optimized, we're providing you the chance to decide yourself.
+  # anything other than premium / online / cracked / offline will lead to the plugin to not work.
+  # A basic explanation:
+  # Online = we use UUID, more efficient.
+  # Offline = we use player name, not efficient.
+  # In both modes, the player name, player uuid, the event and the messages are stored.
+  mode: 'premium'
 
 # UltraLogs prefix
 prefix: '&2Logs »'
@@ -36,11 +58,27 @@ prefix: '&2Logs »'
 update:
   # Would you like to alarm you if there's an update?
   notify: true
+  # Min: 0, Max: 1000, more than that you'd get issues with your database
+  # I'm not responsible of that, I've warned you.
+  # Put the data more than 800 if you have a lot of players, put low if you have
+  # A lot player base, I recommend the following:
+  # Also it depends on your join, leave, chat, commands, etc.
+  # So these might be higher or lower something, those are just recommendations
+  # that I recommend on a player base which barely executes any command or talks..
+  # 0-10: 20 to 100
+  # 11-50: 101 to 200
+  # 51-100: 201 to 500
+  # 101-500: 501 to 700
+  # 501-999: 701 to 999
+  # 1k+: 1000
+  # DO NOT ADD , OR ANYTHING, IT WILL BREAK AND WILL ERROR!
+  data: 500
   # Time between deleting logs (async)
   # 0 will save logs instantly (use more resource - not recommended)
   # We highly encourage you to keep it as it is now.
   # Please be aware that this is for deleting logs only (delete bot)
-  data: 500
+  # DO NOT ADD , OR ANYTHING, IT WILL BREAK AND WILL ERROR!
+  delete_data: 500
   # Debugs on start-up everything that loads and what location
   # Disabled by default, should stay disabled, I only recommend you to enable
   # it when I ask you to/
@@ -86,4 +124,4 @@ mysql:
 # PLEASE BE AWARE THAT YOU CANNOT ADD DOTS (e.g: "14.5") THIS WILL ERROR!
 # DELETE BOT IS PER SERVER!!
 deletebot:
-    each: 14
+  each: 14
